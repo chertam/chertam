@@ -83,7 +83,7 @@ admin = ["u2df5ab4eaa19e5201bd69e9609523e19"]
 me = cl.getProfile().mid
 bot1 = cl.getProfile().mid
 main = cl.getProfile().mid
-bots = me + kicker1
+bots = me
 protectname = []
 protecturl = []
 protection = []
@@ -205,25 +205,23 @@ def bot(op):
                     kc.cancelGroupInvitation(op.param1, matched_list)
                     
 # ----------------- NOTIFED MEMBER OUT GROUP
-
         if op.type == 15:
             if op.param2 in bot1:
                 return
-            cl.sendText(op.param1,"ไปแล้วติ บ๊าย$
-            print "MEMBER HAS LEFT THE GROUP"
+            cl.sendText(op.param1,"ไปซะละ  " + cl.getContact(op.param2).displayName + "  ลาก่อน\n～(^з^)-♡")
+            print ("MEMBER HAS LEFT THE GROUP")
 #------------------ KICK OUT FORM GROUP
         if op.type == 19:
             if op.param2 in bot1:
                 return
-            cl.sendText(op.param1,cl.getConta$
+            cl.sendText(op.param1,cl.getContact(op.param2).displayName + " จัดหนักจัดเต็มเนาะ")
             print "MEMBER KICK OUT FORM GROUP"
-
-# ----------------- NOTIFED MEMBER JOIN  GROUP
+# ----------------- NOTIFED MEMBER JOIN GROUP
         if op.type == 17:
             if op.param2 in bot1:
                 return
             ginfo = cl.getGroup(op.param1)
-            cl.sendText(op.param1, "ยินดีต้อนรับ $
+            cl.sendText(op.param1, "ยินดีต้อนรับ 😊" + cl.getContact(op.param2).displayName + " สู่กลุ่ม " + "👉" + str(ginfo.name) + "👈")
             print "MEMBER HAS JOIN THE GROUP"
             
         if op.type == 17:
